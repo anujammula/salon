@@ -5,9 +5,9 @@ Beauty Salon
 A discount system for a beauty saloon, which provides services and sells beauty products. It offers 3 types of memberships: Premium, Gold and Silver. Premium, gold and silver members receive a discount of 20%, 15%, and 10%, respectively, for all services provided. Customers without membership receive no discount. All members receives a flat 10% discount on products purchased (this might change in future). Your system shall consist of three classes: Customer, Discount and Visit, as shown in the class diagram. It shall compute the total bill if a customer purchases $x of products and $y of services, for a visit. Also write a test program to exercise all the classes.
 
 ## Assumptions/Busines rules followed: 
-1. Customer Entity's primary Key is 'name'
-2. A Customer Entity may have 0 or more Visit Entities associated with it.
-3. Visit Entity's primary key is Composite (name (foreign key from customer Entity) + date).
+1. Customer entity's primary Key is 'name'
+2. A Customer entity may have 0 or more Visit entities associated with it.
+3. Visit entity's primary key is Composite [name (foreign key from customer Entity) + date].
 4. Joda API's DateTime object was chosen over java.util.Date as it is less error prone
 
 There was a MAJOR business rule decision that needed to be made : Assuming that the membership options can change anytime...
@@ -56,4 +56,6 @@ I chose option A for this program.
 }
     *   PUT http://localhost:8080/visits/{name}/{date} --> Updates a single Visit for a single Customer matching the name and date of visit (JSON input)
     *   DELETE http://localhost:8080/visits/{name}/{date} --> Deletes a single Visit for a single Customer matching the name and date of visit
+    
+8. Unit/Integration test cases can be executed by Right cliking on src/test/java folder in Eclipse --> Run As --> JUnit Test
 
