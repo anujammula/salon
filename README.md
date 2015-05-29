@@ -36,3 +36,19 @@ I chose option A for this program.
     *   PUT http://localhost:8080/customers/{name} --> Updates a Customer matching the name (JSON input)
     *   DELETE http://localhost:8080/customers/{name} --> Deletes a Customer matching the name
 
+    *   GET http://localhost:8080/visits/ --> returns all Visits for all Customers
+    *   GET http://localhost:8080/visits/{name} --> returns all Visits for a single Customers matching the name
+    *   GET http://localhost:8080/visits/{name}/{date} --> returns a single Visit for a single Customer matching the name and date of visit
+    *   POST http://localhost:8080/visits --> Adds a Visit (JSON input)
+{
+  "id": {
+    "name": "aaa",
+    "date": "2015-05-29T05:35:13.887-05:00"
+  },
+  "serviceExpense": 10.0,
+  "productExpense": 200.0,
+  "finalBill": 0.0
+}
+    *   PUT http://localhost:8080/visits/{name}/{date} --> Updates a single Visit for a single Customer matching the name and date of visit (JSON input)
+    *   DELETE http://localhost:8080/visits/{name}/{date} --> Deletes a single Visit for a single Customer matching the name and date of visit
+
