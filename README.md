@@ -6,7 +6,7 @@ A discount system for a beauty saloon, which provides services and sells beauty 
 
 ## Assumptions: 
 There was a MAJOR business rule decision that needed to be made : Assuming that the membership options can change anytime...
-* Option A: The discounts will be calculated based on the CURRENT MEMBERSHIP at the time the final bill was being calculated.
+* Option A: The discounts will be calculated based on the CURRENT MEMBERSHIP at the time A visit is retrieved.
 * Option B: The discounts will be calculated based on the MEMBERSHIP at the time visit was recorded in the system. If the MEMBERSHIP option changes later on, a Visit's final bill will not change.
 * Option C: Some combination of Option A and Option B. For example, the final bill will be calculated at end of every billing cycle, and the discounts are calculated based on the MEMBERSHIP at the end of billing cycle.
 
