@@ -25,14 +25,14 @@ I chose option A for this program.
 5. Select that and clisk OK.
 6. Embedded Tomcat server will start on port 8080 using embedded HSQL database.
 7. Using your favorite HTTP REST client you can access following REST end points.
-  a. GET http://localhost:8080/customers --> returns all Customers
-  b. GET http://localhost:8080/customers/{name} --> returns a single Customer matching the name
-  c. POST http://localhost:8080/customers --> Adds a Customer (JSON input)
+  a.  GET http://localhost:8080/customers --> returns all Customers
+  b.  GET http://localhost:8080/customers/{name} --> returns a single Customer matching the name
+  c.  POST http://localhost:8080/customers --> Adds a Customer (JSON input)
       {
 "name": "aaa",
 "member": "true",
 "memberType": "PREMIUM"
 }
-  d. PUT http://localhost:8080/customers/{name} --> Updates a Customer matching the name (JSON input)
-  e. DELETE http://localhost:8080/customers/{name} --> Deletes a Customer matching the name
+  d.  PUT http://localhost:8080/customers/{name} --> Updates a Customer matching the name (JSON input)
+  e.  DELETE http://localhost:8080/customers/{name} --> Deletes a Customer matching the name
 
