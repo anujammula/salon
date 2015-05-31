@@ -28,7 +28,7 @@ public final class DiscountRate {
 	
 	public double getServiceDiscountRate(MemberType memberType){
 		if(memberType == null)
-			return 1;
+			return 0;
 		switch(memberType){
 			case PREMIUM :
 				return serviceDiscountPremium;
@@ -37,13 +37,13 @@ public final class DiscountRate {
 			case SILVER :
 				return serviceDiscountSilver;
 			default :
-				return 1;
+				return 0;
 		}
 	}
 	
 	public double getProductDiscountRate(MemberType memberType){
 		if(memberType == null)
-			return 1;
+			return 0;
 		switch(memberType){
 			case PREMIUM :
 				return productDiscountPremium;
@@ -52,7 +52,7 @@ public final class DiscountRate {
 			case SILVER :
 				return productDiscountSilver;
 			default :
-				return 1;
+				return 0;
 		}
 	}
 	

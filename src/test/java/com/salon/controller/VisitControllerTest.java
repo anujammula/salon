@@ -243,10 +243,11 @@ public class VisitControllerTest {
 		if(!StringUtils.isEmpty(v)){
 			return v.getTotalExpense() 
 					- ( 
-					v.getServiceExpense() * 
-					discountRate.getServiceDiscountRate(v.getCustomer().getMemberType()) 
-					+ v.getProductExpense() * 
-					discountRate.getProductDiscountRate(v.getCustomer().getMemberType())
+					( ( v.getServiceExpense() < 0 ? 0 : v.getServiceExpense() ) * 
+					discountRate.getServiceDiscountRate(v.getCustomer().getMemberType()) )
+					+ 
+					( ( v.getProductExpense() < 0 ? 0 : v.getProductExpense() ) * 
+					discountRate.getProductDiscountRate(v.getCustomer().getMemberType()) )
 					);
 		}
 		else return 0.0;

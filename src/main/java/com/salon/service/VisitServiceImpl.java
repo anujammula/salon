@@ -58,10 +58,12 @@ public class VisitServiceImpl implements VisitService {
 			v.setFinalBill( 
 					v.getTotalExpense() 
 					- ( 
-					v.getServiceExpense() * 
-					discountRate.getServiceDiscountRate(v.getCustomer().getMemberType()) 
-					+ v.getProductExpense() * 
-					discountRate.getProductDiscountRate(v.getCustomer().getMemberType()))
+					( ( v.getServiceExpense() < 0 ? 0 : v.getServiceExpense() ) * 
+					discountRate.getServiceDiscountRate(v.getCustomer().getMemberType()) )
+					+ 
+					( ( v.getProductExpense() < 0 ? 0 : v.getProductExpense() ) * 
+					discountRate.getProductDiscountRate(v.getCustomer().getMemberType()) )
+					)
 					);
 		}
 		
