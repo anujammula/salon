@@ -241,10 +241,13 @@ public class VisitControllerTest {
 
 	private double getFinalBill(Visit v) {
 		if(!StringUtils.isEmpty(v)){
-			return v.getServiceExpense() * 
+			return v.getTotalExpense() 
+					- ( 
+					v.getServiceExpense() * 
 					discountRate.getServiceDiscountRate(v.getCustomer().getMemberType()) 
 					+ v.getProductExpense() * 
-					discountRate.getProductDiscountRate(v.getCustomer().getMemberType());
+					discountRate.getProductDiscountRate(v.getCustomer().getMemberType())
+					);
 		}
 		else return 0.0;
 	}

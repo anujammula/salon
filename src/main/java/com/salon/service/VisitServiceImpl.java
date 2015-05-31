@@ -55,10 +55,14 @@ public class VisitServiceImpl implements VisitService {
 	
 	private Visit setDiscountRates(Visit v){
 		if(!StringUtils.isEmpty(v)){
-			v.setFinalBill( v.getServiceExpense() * 
+			v.setFinalBill( 
+					v.getTotalExpense() 
+					- ( 
+					v.getServiceExpense() * 
 					discountRate.getServiceDiscountRate(v.getCustomer().getMemberType()) 
 					+ v.getProductExpense() * 
-					discountRate.getProductDiscountRate(v.getCustomer().getMemberType()));
+					discountRate.getProductDiscountRate(v.getCustomer().getMemberType()))
+					);
 		}
 		
 		return v;
